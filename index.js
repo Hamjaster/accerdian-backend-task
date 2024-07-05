@@ -8,6 +8,9 @@ const prisma = new PrismaClient();
 
 app.use(bodyParser.json());
 
+// Enable CORS for all routes
+app.use(cors());
+
 // Endpoint to create a new referral
 app.post("/api/referrals", async (req, res) => {
   const { referrerName, referrerEmail, friendName, friendEmail } = req.body;
